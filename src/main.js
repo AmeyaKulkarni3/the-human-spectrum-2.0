@@ -22,3 +22,20 @@ document.querySelectorAll(".accordian-toggle").forEach((button) => {
     }
   });
 });
+
+const playBtn = document.getElementById("playBtn");
+const pipPlayer = document.getElementById("pipPlayer");
+const youtubeFrame = document.getElementById("youtubeFrame");
+const closeBtn = document.getElementById("closeBtn");
+
+const videoUrl = "https://www.youtube.com/embed/D0UnqGm_miA?autoplay=1";
+
+playBtn.addEventListener("click", () => {
+  youtubeFrame.src = videoUrl;
+  pipPlayer.classList.remove("hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+  youtubeFrame.src = "";
+  pipPlayer.classList.add("hidden");
+});

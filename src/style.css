@@ -288,6 +288,14 @@ svg {
   z-index: 5;
 }
 
+.hero-text-container img {
+  position: absolute;
+  top: 10%;
+  left: 23%;
+  z-index: -1;
+  max-width: 40rem;
+}
+
 .hero-text-wrapper {
 }
 
@@ -504,6 +512,15 @@ svg {
   padding-right: 12rem; /* spacing between repetitions */
 }
 
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Footer Section */
 .footer-wrapper {
   display: flex;
@@ -549,23 +566,13 @@ svg {
   padding: 0.5rem 1rem;
 }
 
-@keyframes ticker-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Footer Section */
 .contact-form p {
   margin-bottom: 0.5rem;
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
@@ -636,6 +643,43 @@ svg {
   }
 }
 
+/*Pip Player*/
+.pip-player {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  width: 30rem;
+  background-color: #000;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  z-index: 1000;
+  overflow: hidden;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-end; */
+}
+
+.pip-player iframe {
+  border: none;
+  width: 100%;
+  height: 15rem;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  margin: 4px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 50em) {
   .fs-heading {
     font-size: var(--fs-sub-heading);
@@ -687,19 +731,13 @@ svg {
     padding-top: 4rem;
   }
 
-  .hero-text-wrapper {
-  }
-
-  .play-button {
-  }
-
   /* .hero-text-wrapper h1 {
     font-size: 1.2rem;
-  }
+  }*/
 
   .hero-text-wrapper p {
     font-size: 0.9rem;
-  } */
+  }
 
   .vertical-line {
     display: none;
@@ -778,17 +816,51 @@ svg {
   }
 
   .footer-left-wrapper {
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .footer-left-wrapper ul {
+    align-self: center;
+  }
+
+  .footer-logo {
+    width: 6rem;
+    align-self: center;
   }
 
   .footer-left-wrapper li {
-
+    line-height: 1.8rem;
   }
 
-  .footer-logo img{
-    width: 6rem;
-    height: auto;
-    display: block;
+  .footer-links {
+    line-height: 1.8rem;
+    align-self: center;
+    text-align: center;
+  }
+
+  .contact {
+    line-height: 1.8rem;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .footer-right-wrapper {
+    max-width: 100vw;
+  }
+
+  .pip-player {
+    bottom: 10%;
+    right: 8%;
+    width: 20rem;
+  }
+
+  .pip-player iframe {
+
+    height: 10rem;
   }
 }
 

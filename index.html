@@ -33,10 +33,10 @@
       </div>
       <nav class="primary-navigation" id="primary-navigation">
         <ul role="list" class="nav-list">
-          <li><a href="#">Who We Are</a></li>
-          <li><a href="#">What We Do</a></li>
+          <li><a href="#whoweare">Who We Are</a></li>
+          <li><a href="#whatwedo">What We Do</a></li>
           <li><a href="#">MannMade</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#footer">Contact Us</a></li>
         </ul>
       </nav>
       <button
@@ -55,6 +55,7 @@
         <div class="hero-container">
           <div class="hero-content-wrapper">
             <div class="hero-text-container">
+              <!-- <img src="assets/landing/Landing_page_shape_1_new.png" alt=""> -->
               <div class="hero-text-wrapper">
                 <h1 class="ff-quotes fw-bold text-secondary-400 fs-heading">
                   We are The Human Spectrum
@@ -66,13 +67,26 @@
                 </p>
               </div>
             </div>
-            <div class="play-button">
+            <div class="play-button" id="playBtn">
               <i
                 class="fa-regular fa-circle-play text-neutral-400 fs-hero-heading play-button-hover"
               ></i>
               <div class="ff-body fw-bold">PLAY THE VIDEO</div>
             </div>
           </div>
+        </div>
+        <div class="pip-player hidden" id="pipPlayer">
+          <iframe
+            id="youtubeFrame"
+            width="300"
+            height="170"
+            src=""
+            title="YouTube Video Player"
+            frameborder="0"
+            allow="autoplay; encrypted-mdeia"
+            allowfullscreen
+          ></iframe>
+          <button id="closeBtn"><i class="fa-solid fa-xmark close text-primary-color"></i></button>
         </div>
       </section>
       <section id="whoweare">
@@ -311,17 +325,21 @@
       </section>
     </main>
     <footer>
-      <div class="footer-wrapper bg-primary-color">
+      <div class="footer-wrapper bg-primary-color" id="footer">
         <div class="footer-left-wrapper">
           <div class="footer-logo">
             <img src="assets/logo_grey.png" alt="" />
-          </div>          
+          </div>
           <ul>
             <li>
-              <a href="#" class="text-neutral-400 fw-bold">Who We Are</a>
+              <a href="#whoweare" class="text-neutral-400 fw-bold"
+                >Who We Are</a
+              >
             </li>
             <li>
-              <a href="#" class="text-neutral-400 fw-bold">What We Do</a>
+              <a href="#whatwedo" class="text-neutral-400 fw-bold"
+                >What We Do</a
+              >
             </li>
             <li><a href="#" class="text-neutral-400 fw-bold">MannMade</a></li>
           </ul>
