@@ -1012,3 +1012,15 @@ svg {
     margin-block: 1rem;
   }
 }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
