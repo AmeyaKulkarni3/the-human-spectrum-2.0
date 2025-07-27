@@ -40,12 +40,21 @@ closeBtn.addEventListener("click", () => {
   pipPlayer.classList.add("hidden");
 });
 
-const sections = document.querySelectorAll(".fade-in-section");
+const navLinks = document.querySelectorAll(".nav-list a");
+const sections = document.querySelectorAll("section");
+console.log(navLinks);
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
         entry.target.classList.add("in-view");
         observer.unobserve(entry.target);
       }
@@ -56,4 +65,4 @@ const observer = new IntersectionObserver(
   }
 );
 
-sections.forEach(section => observer.observe(section));
+sections.forEach((section) => observer.observe(section));

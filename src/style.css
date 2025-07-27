@@ -242,6 +242,10 @@ svg {
   color: var(--clr-secondary-text);
 }
 
+.nav-list a.active {
+  font-weight: bold;
+}
+
 .mobile-nav-toggle .close {
   display: none;
   z-index: 12;
@@ -1023,4 +1027,8 @@ svg {
 .fade-in-section.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+section {
+  scroll-margin-top: 8rem;
 }

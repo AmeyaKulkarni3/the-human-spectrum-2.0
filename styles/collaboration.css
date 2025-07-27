@@ -1,0 +1,16 @@
+.collaboration-hero {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: 5;
+  min-height: 100vh;
+  background: url("/assets/collaboration/Page_Ngo_image_1.svg") center center /
+    cover no-repeat;
+}
+
+.sub-heading {
+    display: flex;
+    margin: 2rem;
+}
