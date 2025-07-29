@@ -5,6 +5,8 @@ toggle.addEventListener("click", () => {
   const isVisible = nav.getAttribute("data-visible") === "true";
   nav.setAttribute("data-visible", !isVisible);
   toggle.setAttribute("aria-expanded", !isVisible);
+
+  document.body.classList.toggle("menu-open", !isVisible);
 });
 
 document.querySelectorAll(".accordian-toggle").forEach((button) => {

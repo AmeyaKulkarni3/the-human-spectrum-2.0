@@ -10,6 +10,8 @@
   --clr-primary-text: hsl(0, 0%, 36.9%);
   --clr-secondary-text: hsl(0, 0%, 0%);
 
+  --clr-collab-bg: hsl(143, 17.6%, 71%);
+
   --ff-primary: "Lato", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --ff-style: "Schoolbell", cursive;
@@ -124,6 +126,10 @@ svg {
 
 .bg-accent-color {
   background-color: var(--clr-accent-400);
+}
+
+.bg-collab-color {
+  background-color: var(--clr-collab-bg);
 }
 
 .text-primary-color {
@@ -893,7 +899,7 @@ svg {
 
   .neuro-foot-text {
     margin-left: 3rem;
-    font-size: small;
+    font-size: x-small;
     bottom: -10%;
   }
 
@@ -981,7 +987,7 @@ svg {
   .blob-background {
     width: 220%;
     height: 200%;
-    transform: translate(-50%, -51%) scale(1.1);
+    transform: translate(-50%, -51%) scale(0.9);
   }
 
   .form-grid {
