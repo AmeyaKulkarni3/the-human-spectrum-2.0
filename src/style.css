@@ -184,6 +184,10 @@ svg {
   font-style: italic;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 .fs-heading {
   font-size: var(--fs-heading);
 }
