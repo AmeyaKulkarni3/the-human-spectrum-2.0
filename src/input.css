@@ -46,3 +46,9 @@
 .ticker {
   animation: ticker-move var(--ticker-duration) linear infinite;
 }
+
+.g-recaptcha {
+  transform: scale(0.7);
+  transform-origin: 0 0;
+}
+

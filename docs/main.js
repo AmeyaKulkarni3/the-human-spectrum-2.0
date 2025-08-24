@@ -93,17 +93,39 @@ function setupTextTicker() {
 window.addEventListener("resize", setupTextTicker);
 window.addEventListener("load", setupTextTicker);
 
-const form = document.getElementById("contactForm");
-const successMsg = document.getElementById("successMsg");
+// const form = document.getElementById("contactForm");
+// const successMsg = document.getElementById("successMsg");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // remove this if you want actual server submission
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault(); // remove this if you want actual server submission
 
-  // 👉 This only works on the form element
-  form.reset();
+//   // 👉 This only works on the form element
+//   form.reset();
 
-  // Show feedback
-  successMsg.classList.remove("hidden");
-  setTimeout(() => successMsg.classList.add("hidden"), 3000);
+//   // Show feedback
+//   successMsg.classList.remove("hidden");
+//   setTimeout(() => successMsg.classList.add("hidden"), 3000);
+// });
+
+const scriptUrl =
+  "https://script.google.com/macros/s/AKfycbxf3QyR7sLrQWei6AHBZmCEtrXxFjLqtVaBlCzHpF2NwEfu6V5fdK1MwYl2vaSZeRcM/exec";
+document.getElementById("contactForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const form = new FormData(e.target);
+  const data = Object.fromEntries(form.entries());
+
+  console.log(data);
+
+  fetch(scriptUrl, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then(() => {
+      alert("Data has been shared!");
+      e.target.reset();
+    })
+    .catch((err) => console.error("Error!", err.message));
 });
-
