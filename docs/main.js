@@ -112,9 +112,9 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   grecaptcha.ready(function () {
     grecaptcha
-      .execute("YOUR_SITE_KEY", { action: "submit" })
+      .execute("6Lf6pbArAAAAABv5qpZgIdbyidt4GDZ-_mB936Qv", { action: "submit" })
       .then(function (token) {
-        fetch("YOUR_WEB_APP_URL", {
+        fetch("https://ameyakulkarni3.github.io/the-human-spectrum-2.0", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
