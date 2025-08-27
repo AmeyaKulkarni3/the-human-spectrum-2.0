@@ -110,30 +110,33 @@ window.addEventListener("load", setupTextTicker);
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  grecaptcha.ready(function () {
-    grecaptcha
-      .execute("6Lf6pbArAAAAABv5qpZgIdbyidt4GDZ-_mB936Qv", { action: "submit" })
-      .then(function (token) {
-        fetch("https://ameyakulkarni3.github.io/the-human-spectrum-2.0", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            token: token,
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            city: document.getElementById("city").value,
-            message: document.getElementById("message").value,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            alert(data.message);
-            if (data.status === "success") {
-              document.getElementById("contactForm").reset();
-            }
-          })
-          .catch((err) => alert("Network error: " + err.message));
-      });
-  });
+  const token = document.querySelector("[name='g-recaptcha-response']").value;
+
+   if (!token) {
+    alert("Please complete the reCAPTCHA before submitting.");
+    return;
+  }
+  
+
+  fetch("https://ameyakulkarni3.github.io/the-human-spectrum-2.0", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      token: token,
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      city: document.getElementById("city").value,
+      message: document.getElementById("message").value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      alert(data.message);
+      if (data.status === "success") {
+        document.getElementById("contactForm").reset();
+        grecaptcha.reset();
+      }
+    })
+    .catch((err) => alert("Network error: " + err.message));
 });
