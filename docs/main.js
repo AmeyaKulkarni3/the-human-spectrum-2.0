@@ -118,7 +118,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   }
   
 
-  fetch("https://script.google.com/macros/s/AKfycbxf3QyR7sLrQWei6AHBZmCEtrXxFjLqtVaBlCzHpF2NwEfu6V5fdK1MwYl2vaSZeRcM/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbz-qX3GgWyXrtN_rP6O3p_Lah3mkKTlBg185e4F4fRhe93QJfJ127cH4aZXSp55wVXU/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
