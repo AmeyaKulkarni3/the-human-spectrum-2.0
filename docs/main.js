@@ -130,7 +130,9 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
       message: document.getElementById("message").value,
     }),
   })
-    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      res.json()})
     .then((data) => {
       alert(data.message);
       if (data.status === "success") {
