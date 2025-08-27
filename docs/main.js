@@ -118,7 +118,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   }
   
 
-  fetch("https://ameyakulkarni3.github.io/the-human-spectrum-2.0", {
+  fetch("https://script.google.com/macros/s/AKfycbxf3QyR7sLrQWei6AHBZmCEtrXxFjLqtVaBlCzHpF2NwEfu6V5fdK1MwYl2vaSZeRcM/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
