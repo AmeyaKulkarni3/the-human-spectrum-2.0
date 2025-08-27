@@ -107,25 +107,33 @@ window.addEventListener("load", setupTextTicker);
 //   setTimeout(() => successMsg.classList.add("hidden"), 3000);
 // });
 
-const scriptUrl =
-  "https://script.google.com/macros/s/AKfycbxf3QyR7sLrQWei6AHBZmCEtrXxFjLqtVaBlCzHpF2NwEfu6V5fdK1MwYl2vaSZeRcM/exec";
-document.getElementById("contactForm").addEventListener("submit", (e) => {
+document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const form = new FormData(e.target);
-  const data = Object.fromEntries(form.entries());
-
-  console.log(data);
-
-  fetch(scriptUrl, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  })
-    .then(() => {
-      alert("Data has been shared!");
-      e.target.reset();
-    })
-    .catch((err) => console.error("Error!", err.message));
+  grecaptcha.ready(function () {
+    grecaptcha
+      .execute("YOUR_SITE_KEY", { action: "submit" })
+      .then(function (token) {
+        fetch("YOUR_WEB_APP_URL", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            token: token,
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            city: document.getElementById("city").value,
+            message: document.getElementById("message").value,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data.message);
+            if (data.status === "success") {
+              document.getElementById("contactForm").reset();
+            }
+          })
+          .catch((err) => alert("Network error: " + err.message));
+      });
+  });
 });
