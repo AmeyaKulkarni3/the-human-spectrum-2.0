@@ -120,7 +120,8 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   fetch("https://script.google.com/macros/s/AKfycbwBa5ToNEIZWbLY27MviBLv5ImaysuR5xPbPiRn_bxNM_4sZLh96qEdXH-Fq4JqSn6f/exec", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    // headers: { "Content-Type": "application/json" },
+    headers: {"content-type":"text/plain;charset=utf-8"},
     body: JSON.stringify({
       token: token,
       name: document.getElementById("name").value,
