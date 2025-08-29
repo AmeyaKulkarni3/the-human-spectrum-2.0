@@ -118,10 +118,10 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   }
   
 
-  fetch("https://script.google.com/macros/s/AKfycbyOcDFVFE6zfw1XuA7T1i0MePdDIKoPL6-s1UupQh20x2xcV9CdJ1kLnu2_iVM2mm-7fQ/exec", {
+  fetch("https://ths-google-script-proxy.braveheartask.workers.dev/", {
     method: "POST",
     // headers: { "Content-Type": "application/json" },
-    headers: {"content-type":"text/plain;charset=utf-8"},
+    headers: {"content-type":"application/json"},
     body: JSON.stringify({
       token: token,
       name: document.getElementById("name").value,
