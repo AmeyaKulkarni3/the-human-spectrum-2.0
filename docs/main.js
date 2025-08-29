@@ -120,8 +120,8 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   fetch("https://ths-google-script-proxy.braveheartask.workers.dev/", {
     method: "POST",
-    // headers: { "Content-Type": "application/json" },
-    headers: {"content-type":"application/json"},
+    headers: { "Content-Type": "application/json" },
+    // headers: {"content-type":"application/json"},
     body: JSON.stringify({
       token: token,
       name: document.getElementById("name").value,
