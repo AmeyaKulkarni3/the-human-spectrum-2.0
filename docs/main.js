@@ -135,7 +135,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
       console.log(res);
       res.json()})
     .then((data) => {
-      alert(data.message);
+      alert(data);
       if (data.status === "success") {
         document.getElementById("contactForm").reset();
         grecaptcha.reset();
