@@ -112,11 +112,10 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   const token = document.querySelector("[name='g-recaptcha-response']").value;
 
-   if (!token) {
+  if (!token) {
     alert("Please complete the reCAPTCHA before submitting.");
     return;
   }
-  
 
   fetch("https://ths-google-script-proxy.braveheartask.workers.dev", {
     method: "POST",
@@ -131,11 +130,11 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
       message: document.getElementById("message").value,
     }),
   })
-    .then((res) => {
-      console.log(res);
-      res.json()})
+    .then((res) => res.json())
     .then((data) => {
-      alert(data);
+      console.log(data);
+
+      alert(data.message);
       if (data.status === "success") {
         document.getElementById("contactForm").reset();
         grecaptcha.reset();
