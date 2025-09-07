@@ -133,12 +133,15 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-
-      alert(data.message);
-      if (data.status === "success") {
-        document.getElementById("contactForm").reset();
-        grecaptcha.reset();
+      if (data.message) {
+        alert(data.message);
+        if (data.status === "success") {
+          document.getElementById("contactForm").reset();
+          grecaptcha.reset();
+        }
+      } else {
+        alert("Network error: " + data.error)
       }
     })
-    .catch((err) => alert("Network error: " + err.message));
+    .catch((err) => alert("Network error: " + err.error));
 });
