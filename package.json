@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
+    "glob": "^11.0.3",
     "tailwindcss": "^4.1.11"
   }
 }
