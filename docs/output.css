@@ -60,6 +60,7 @@
     --color-accent-500: oklch(0.7243 0.0463 298.2);
     --color-primary-t: oklch(0.4823 0 0);
     --color-collab-500: oklch(0.7901 0.0361 158.41);
+    --font-secondary: "Open Sans", sans-serif;
     --font-primary: "Lato", sans-serif;
     --logo-track-width: 100%;
     --logo-track-duration: 20s;
@@ -559,8 +560,8 @@
   .bg-\[url\(assets\/intervention\/Page_EI_image_1_full\.png\)\] {
     background-image: url(assets/intervention/Page_EI_image_1_full.png);
   }
-  .bg-\[url\(assets\/landing\/Landing_page_image_1\.png\)\] {
-    background-image: url(assets/landing/Landing_page_image_1.png);
+  .bg-\[url\(assets\/landing\/Landing_page_image_1_comp\.webp\)\] {
+    background-image: url(assets/landing/Landing_page_image_1_comp.webp);
   }
   .bg-\[url\(assets\/mannmade\/Page_MannMade_image_1\.png\)\] {
     background-image: url(assets/mannmade/Page_MannMade_image_1.png);
@@ -654,6 +655,9 @@
   .font-primary {
     font-family: var(--font-primary);
   }
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -725,6 +729,12 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .capitalize {
+    text-transform: capitalize;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .italic {
     font-style: italic;
